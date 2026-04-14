@@ -33,11 +33,9 @@ python3 -m pip install requests
 
 ########################
 
-to run the program (from CMD or powershell):
+to run the program (from CMD or powershell in Assignment10OOP/assignment10)
 
 python main.py
-or
-py main.py
 
 while inside project folder
 

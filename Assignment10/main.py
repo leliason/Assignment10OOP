@@ -1,6 +1,6 @@
 from persistence.api_client import ApiClient
 from persistence.repository import Repository
-from services.Cleaner import Cleaner
+from services.cleaner import Cleaner
 from services.analyzer import Analyzer
 from ui.cli import CLI
 

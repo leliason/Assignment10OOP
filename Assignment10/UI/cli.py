@@ -1,3 +1,8 @@
+from persistence.api_client import ApiClient
+from persistence.repository import Repository
+from services.cleaner import Cleaner
+from services.analyzer import Analyzer
+
 class CLI:
     def __init__(self, api_client, repository, cleaner, analyzer):
         self.api_client = api_client
