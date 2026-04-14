@@ -4,6 +4,6 @@ class Record:
         self.elevation = elevation
         self.temperature = temperature
     def temp_range(self) -> float:
-        if not self.temperatures:
+        if not self.temperature:
             return 0.0
         return max(self.temperature) - min(self.temperature)
