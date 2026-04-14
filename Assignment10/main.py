@@ -1,8 +1,8 @@
-from Persistence.api_client import ApiClient
-from Persistence.repository import Repository
-from Services.Cleaner import Cleaner
-from Services.analyzer import Analyzer
-from UI.cli import CLI
+from persistence.api_client import ApiClient
+from persistence.repository import Repository
+from services.Cleaner import Cleaner
+from services.analyzer import Analyzer
+from ui.cli import CLI
 
 def main():
     api_client = ApiClient()
