@@ -2,12 +2,19 @@ from domain.records import Record
 
 class Cleaner:
     def clean(self, raw_data: dict, elevation: float):
-        temps = [t for t in raw_data["temperatures"] if t is not None]
 
-        record = Record(
-            city=raw_data["city"],
-            elevation=float(elevation),
-            temperature=temps
-        )
+        temps = raw_data["daily"]["temperature_2m_max"]
+        temps_min = raw_data["daily"]["temperature_2m_min"]
+        times = raw_data["daily"]["time"]
+        records = []
 
-        return [record]
+        for i in range(len(times)):
+            daily_temps = [temps[i], temps_min[i]]
+            records.append(
+                Record(
+                    city=raw_data["city"],
+                    elevation=float(elevation),
+                    temperatures=daily_temps
+                )
+            )
+        return records
