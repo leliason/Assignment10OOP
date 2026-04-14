@@ -11,7 +11,7 @@ def main():
     analyzer = Analyzer()
 
     app = CLI(
-        api_client=Api_client,
+        api_client=api_client,
         Repository=Repository,
         cleaner=cleaner,
         analyzer=analyzer
