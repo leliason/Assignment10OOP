@@ -1,4 +1,4 @@
-from domain.record import Record
+from Assignment10.Domain.records import Record
 
 class Cleaner:
     def clean(self, raw_data: dict, elevation: float) -> Record:

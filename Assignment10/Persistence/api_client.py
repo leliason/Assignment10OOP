@@ -13,7 +13,6 @@ class ApiClient:
             "daily": "temperature_2m_max,temperature_2m_min",
             "timezone": "auto"
         }
-
         response = requests.get(url, params=params)
         data = response.json()
         temps = []
