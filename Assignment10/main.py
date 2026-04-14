@@ -6,16 +6,17 @@ from UI.cli import CLI
 
 def main():
     api_client = ApiClient()
-    Repository = Repository()
-    cleaner= Cleaner()
+    repository = Repository()
+    cleaner = Cleaner()
     analyzer = Analyzer()
 
     app = CLI(
         api_client=api_client,
-        Repository=Repository,
+        repository=repository,
         cleaner=cleaner,
         analyzer=analyzer
     )
     app.run()
-    if __name__ == "__main__":
-        main()
+
+if __name__ == "__main__":
+    main()

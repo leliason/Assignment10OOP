@@ -1,15 +1,31 @@
 # Assignment10OOP
 
+
+########################
+
+THESIS:
+Higher elevation is associated with more drastic changes in temperature
+
+########################
+
+API used:
+api.open-meteo.com
+
+Endpoint:
+https://api.open-meteo.com/v1/forecast
+
 ########################
 
 REQUIRED:
-run this command in powershell or CMD (windows):
+run these commands in powershell or CMD (windows):
 
 pip install requests
+pip install numpy
 
 OR
 
 python -m pip install requests
+python -m pip install numpy
 
 for linux:
 
