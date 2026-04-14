@@ -2,8 +2,8 @@ class Record:
     def __init__(self, city: str, elevation: float, temperature: float):
         self.city = city
         self.elevation = elevation
-        self.temperatures = temperature
+        self.temperature = temperature
     def temp_range(self) -> float:
         if not self.temperatures:
-            return 0
-        return max(self.temperatures) - min(self.temperatures)
+            return 0.0
+        return max(self.temperature) - min(self.temperature)

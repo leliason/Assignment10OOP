@@ -1,5 +1,5 @@
 import numpy as np
-from Assignment10.Domain.analysis_result import AnalysisResult
+from domain.analysis_result import AnalysisResult
 
 class Analyzer:
     def analyze(self, records):

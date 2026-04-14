@@ -1,4 +1,4 @@
-from Assignment10.Domain.records import Record
+from domain.records import Record
 
 class Cleaner:
     def clean(self, raw_data: dict, elevation: float) -> Record:
@@ -7,5 +7,5 @@ class Cleaner:
         return Record(
             city=raw_data["city"],
             elevation=float(elevation),
-            temperatures=temps
+            temperature=sum(temps) / len(temps) if temps else None
         )
