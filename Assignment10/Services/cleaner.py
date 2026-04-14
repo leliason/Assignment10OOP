@@ -7,5 +7,6 @@ class Cleaner:
         return Record(
             city=raw_data["city"],
             elevation=float(elevation),
-            temperature=sum(temps) / len(temps) if temps else None
+            temperature=temps
         )
+        return [Record]

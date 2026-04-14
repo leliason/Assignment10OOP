@@ -33,6 +33,9 @@ class CLI:
             raw = self.api_client.fetch_city_data(city, lat, lon)
             cleaned_records = self.cleaner.clean(raw, elevation)
 
+            if not isinstance(cleaned_records, list):
+                cleaned_records = [cleaned_records]
+
             for record in cleaned_records:
                 self.repository.save(record)
 
@@ -40,17 +43,17 @@ class CLI:
         result = self.analyzer.analyze(records)
 
         print("THESIS:\nHigher elevation is associated with more drastic changes in temperature")
-        print("SOURCE: Open-Meteo Weather Api\nLINK:https: //api.open-meteo.com/v1/forecast")
+        print("SOURCE: Open-Meteo Weather Api\nLINK: https://api.open-meteo.com/v1/forecast")
         print(f"Total amount of records gathered: {len(records)}\n")
 
         print("METHOD:\nCollected daily temperature data from different cities with differing elevation")
         print("Computed the correlation to prove/disprove thesis")
 
         print("Sample data:\n")
-        print(f"{'city':<18}{"elevation(m)":<15}{"temperature":<12}")
+        print(f"{'city':<18}{'elevation(m)':<15}{'temperature':<12}")
         sample = records[:12]
         for i in sample:
-            print(f"{i.city:<18}{i.elevation:<15}{i.temperature:<12}")
+            print(f"{i.city:<18}{i.elevation:<15}{i.temp_range():<12.2f}")
 
         print("\nCorrelation coeficcient:")
         print(f"{result.correlation:.4f}\n")
