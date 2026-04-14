@@ -11,7 +11,8 @@ class ApiClient:
             "latitude": latitude,
             "longitude": longitude,
             "daily": "temperature_2m_max,temperature_2m_min",
-            "timezone": "auto"
+            "timezone": "auto",
+            "forecast_days": 16
         }
         response = requests.get(url, params=params)
         data = response.json()

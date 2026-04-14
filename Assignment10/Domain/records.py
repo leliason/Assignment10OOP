@@ -6,4 +6,4 @@ class Record:
     def temp_range(self) -> float:
         if not self.temperature:
             return 0.0
-        return max(self.temperature) - min(self.temperature)
+        return self.temperature[0] - self.temperature[1]
